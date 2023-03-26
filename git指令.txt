@@ -1,0 +1,93 @@
+github账户  
+liuhy23
+!lhy75347800
+
+
+Remote：远程仓库
+Repository：本地仓库
+index：暂存区   git status  查看暂存区域的状态
+workspace：工作区
+安装配置
+git config --list       					 查看git配置
+git config --global                          首次使用的时候配置用户名、邮箱
+git config --global user.name "用户名称"
+git config --global user.email "邮箱地址"
+git config --global user.phone "手机号码"
+
+创建本地仓库   git init
+mkdir 仓库名称
+cd 仓库名称
+git init
+ls -ah查看隐藏目录
+
+
+
+
+
+
+
+代码提交
+1、git add 文件名称   添加工作目录的修改文件到暂存区
+   git add --all      将所有改动文件添加到缓存区
+   git add .	      将所有改动文件添加到缓存区
+   git rm 文件名称    删除文件
+2、git commit -m "提交内容备注信息"     将暂存区的文件提交到本地仓库
+   git commit --amend  重写上一次提交记录
+   git log              查看提交历史
+   
+3、git push        将本地仓库文件同步到远程仓库
+代码拉取
+1、git pull        从远程仓库同步代码到本地仓库
+2、git reset       从本地仓库同步代码到暂存区域
+   git reset --hard    回滚代码仓库：
+   --soft 、--mixed以及--hard是三个恢复等级。
+   使用--soft就仅仅将头指针恢复，已经add的暂存区以及工作空间的所有东西都不变。
+   如果使用--mixed，就将头恢复掉，已经add的暂存区也会丢失掉，工作空间的代码什么的是不变的。
+   如果使用--hard，那么一切就全都恢复了，头变，aad的暂存区消失，代码什么的也恢复到以前状态。
+   git reset --hard 要回滚id
+   查看单个文件可回滚版本：git log filename
+3、git checkout    从暂存区域同步代码到工作目录
+   将文件撤销回到最近一次修改的状态：git checkout -- file
+
+分支创建、切换分支
+git创建分支：git branch、git checkout
+git checkout -b 分支名称   创建分支并切换分支
+git branch 如果后面跟着名字则会创建分支，但不会切换
+git checkout 后面如果是分支名称则切换过去
+
+合并分支
+git合并分支：git merge
+当我们新建分支并做完工作之后，想要把分支提交至master，只需要切换到master仓库，并执行git merge 分支名就可以了
+如我们在分支中新建了一个f.c和test.c的文件
+然后在使用git checkout master切换到master
+在使用git merge dev将其合并
+
+
+
+
+
+
+
+
+
+
+https://github.com/liuhy23/test.git
+
+
+
+echo "# test" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/liuhy23/test.git
+git push -u origin main
+
+
+
+
+
+
+git remote add origin https://github.com/liuhy23/test.git
+git branch -M main
+git push -u origin main
